@@ -1,0 +1,13 @@
+.main{
+    background-color: blue;
+}
+.title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.title h1{
+}
+.container{
+    display: grid;
+}
