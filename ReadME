@@ -1,0 +1,15 @@
+Library project:
+
+
+1> write a function that loops through the array and displays each book on cards or in a table
+
+2> add a "new book" button that brings up a form allowing users to input details such ass
+   (author/title/number of pages/read status) and anything else you might want!
+
+## watch out for submiting issues when using a form  and utilize event.preventDefault();
+
+3> add a button on each book's display to remove the book from the library
+    > remember to associate DOM elements with actual book objects in some way
+
+4> add a button to change its read status
+    > create a function that toggles a books read startus on your Book prototype instance
