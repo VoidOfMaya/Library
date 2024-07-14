@@ -30,38 +30,36 @@ function bookCard(bookArr){
     const mainContainer = document.querySelector(".main-container");
     const card =document.createElement('div');
     card.classList.add("Book-Card");
+    card.style.borderRadius = '10px';
+    card.style.padding = '10px'
     card.style.display= 'grid';
-    card.textContent = `${bookArr} `;
+    card.style.backgroundColor = 'green';
+    mainContainer.appendChild(card);
+
+
+    //card.textContent = `${bookArr} `;
 
     //creating internal book-card content
-    //try foreach first
+    //making unordered list
+    const bookList =document.createElement('ul');
+    bookList.classList.add("Book-list");
+    card.appendChild(bookList);
+    //map to list aproach first
     bookArr.map(book =>{
         let bookItem =document.createElement('div');
-        bookItem.classList.add('author');
+        bookItem.classList.add('book-item');
         bookItem.innerHTML= `${book}`;
         bookItem.style.backgroundColor = 'yellow';
-        card.appendChild(bookItem);
+        bookItem.style.padding = '5px';
+        bookList.appendChild(bookItem);
     })
-    //author
-
-    /*
-    const bookAuthor = document.createElement('div');
-    bookAuthor.classList.add('author');
-    bookAuthor.innerHTML= `${author}`;
-    bookAuthor.style.backgroundColor = 'yellow';
-    card.appendChild(bookAuthor);
-    */
-
-
     console.log(` this is the book card function , ${author}, ${title}, ${pages}, ${read}, ${published}, `)
 
   
   
   
     
-    card.style.backgroundColor = 'green';
-    //appending info into cards
-    mainContainer.appendChild(card);
+
 }
 
 // place holder example data

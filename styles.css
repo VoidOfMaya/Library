@@ -1,5 +1,15 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Raleway', sans-serif;
+ 
+    list-style: none;
+}
 .main{
     background-color: blue;
+    padding:10px;
+    
 }
 .title{
     display: flex;
@@ -10,4 +20,13 @@
 }
 .main-container{
     display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 10px;
+}
+
+.demo-card{
+    background-color: green;
+    border-radius: 10px;
+
 }
