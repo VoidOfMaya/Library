@@ -4,7 +4,7 @@ Library project:
 1> write a function that loops through the array and displays each book on cards or in a table
 
 2> add a "new book" button that brings up a form allowing users to input details such ass
-   (author/title/number of pages/read status) and anything else you might want!
+   (cd ) and anything else you might want!
 
 ## watch out for submiting issues when using a form  and utilize event.preventDefault();
 
