@@ -6,27 +6,46 @@
  
     list-style: none;
 }
+
 .main{
-    background-color: blue;
-    padding:10px;
+    background-color:#eff5fd;
+    height: 100vh
     
 }
 .title{
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 10%;
+    background-color: tomato;
+    padding: 20px;
+    color:white;
+    box-shadow: 5px 3px 10px 1px rgba(39, 38, 38, 0.38);
+
 }
 .title h1{
 }
+
 .main-container{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     gap: 10px;
+    padding: 15px;
+    justify-items: center;
 }
 
-.demo-card{
-    background-color: green;
-    border-radius: 10px;
 
+.demo-card{
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    box-shadow: 5px 3px 10px 1px rgba(0,0,0,0.38);
+
+}
+.book-info{
+    margin: 5%;
+}
+
+li {
+    margin-top: 5px;
 }

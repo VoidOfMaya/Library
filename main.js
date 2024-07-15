@@ -30,10 +30,15 @@ function bookCard(bookArr){
     const mainContainer = document.querySelector(".main-container");
     const card =document.createElement('div');
     card.classList.add("Book-Card");
+
+    card.style.minWidth = '200px';
+    card.style.maxWidth = '300px';
     card.style.borderRadius = '10px';
     card.style.padding = '10px'
     card.style.display= 'grid';
-    card.style.backgroundColor = 'green';
+    card.style.backgroundColor = 'rgb(255, 255, 255)';
+    card.style.justifyItems= 'center';
+    card.style.boxShadow = '5px 3px 10px 1px rgba(0,0,0,0.38)';
     mainContainer.appendChild(card);
 
 
@@ -43,17 +48,81 @@ function bookCard(bookArr){
     //making unordered list
     const bookList =document.createElement('ul');
     bookList.classList.add("Book-list");
+    bookList.style.display = 'grid';
+    bookList.style.gridTemplateColumns = '1fr 1fr';
+    bookList.style.gridTemplateRows = '1fr 1fr 1fr 1fr 1fr 1fr';
     card.appendChild(bookList);
     //map to list aproach first
-    bookArr.map(book =>{
+    bookArr.map((book, index)=>{
+
+        //code for sorting by value key
+        let bookKey = document.createElement('div');
+        bookKey.classList.add('book-key');
+        bookKey.style.paddingBottom = '5px';
+
         let bookItem =document.createElement('div');
         bookItem.classList.add('book-item');
+
+        switch (index){
+            case 0:
+               
+                bookKey.innerHTML = `Author: `;
+                bookList.appendChild(bookKey);
+                bookItem.innerHTML= `${book}`;
+                bookList.appendChild(bookItem);
+                
+                break;
+
+            case 1:
+            
+                bookKey.innerHTML = `title: `;
+                bookList.appendChild(bookKey);
+                bookItem.innerHTML= `${book}`;
+                bookList.appendChild(bookItem);
+
+                break; 
+
+            case 2:
+
+                bookKey.innerHTML = `pages: `;
+                bookList.appendChild(bookKey);
+                bookItem.innerHTML= `${book}`;
+                bookList.appendChild(bookItem);
+
+                break;
+
+            case 3:
+                
+                bookKey.innerHTML = `read: `;
+                bookList.appendChild(bookKey);
+                bookItem.innerHTML= `${book}`;
+                bookList.appendChild(bookItem);
+
+                break;
+
+            case 4:
+
+                bookKey.innerHTML = `published: `;
+                bookList.appendChild(bookKey);
+                bookItem.innerHTML= `${book}`;
+                bookList.appendChild(bookItem);
+
+                break;
+            default:   
+        }
+
+        //code inserting each value
+        /*
+
+
         bookItem.innerHTML= `${book}`;
-        bookItem.style.backgroundColor = 'yellow';
-        bookItem.style.padding = '5px';
         bookList.appendChild(bookItem);
+        bookItem.style.padding = '5px';
+        bookItem.style.borderBottom = '1px solid black'
+        
+        */
     })
-    console.log(` this is the book card function , ${author}, ${title}, ${pages}, ${read}, ${published}, `)
+    
 
   
   
@@ -63,7 +132,7 @@ function bookCard(bookArr){
 }
 
 // place holder example data
-let bookOne = new Book("Ekhart Tole","The Power Of Now", 300, false, 2001);
+let bookOne = new Book("Ekhart Tole","Power Of Now", 300, false, 2001);
 let bookTwo = new Book("Frank Herbert", "Dune", 530, true, 1987);
 let bookThree = new Book("Danni Davido", "Magnum Dong", 2400, false, 2010); 
 
