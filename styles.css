@@ -17,7 +17,7 @@
     align-items: center;
     justify-content: center;
     margin-bottom: 10%;
-    background-color: tomato;
+    background-color: #ff6347;
     padding: 20px;
     color:white;
     box-shadow: 5px 3px 10px 1px rgba(39, 38, 38, 0.38);
@@ -54,10 +54,22 @@ li {
 }
 
 .add-book-btn{
-    display:grid;#eff5fd
+    display:grid;
+    grid-template-columns: 2fr 1fr 2fr;
+    justify-items: center;
+    
 }
 .add-book-btn button{
     border: none;
-    color:(0, 0, 0, 0, 4) ;
-    background-color: #eff5fd;
+    background-color:#eff5fd;
+}
+.add-book-btn button img:hover{
+    width: 70px;
+    height: 70px;
+    
+}
+.add-book-btn button:hover{
+    background-color: white;
+    border-radius: 50px;
+    opacity: 50%;
 }

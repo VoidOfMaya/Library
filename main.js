@@ -30,7 +30,7 @@ function bookCard(bookArr){
     const mainContainer = document.querySelector(".main-container");
     const card =document.createElement('div');
     card.classList.add("Book-Card");
-
+    
     card.style.minWidth = '300px';
     card.style.maxWidth = '350px';
     card.style.borderRadius = '10px';
@@ -38,6 +38,7 @@ function bookCard(bookArr){
     card.style.display= 'grid';
     card.style.backgroundColor = 'rgb(255, 255, 255)';
     card.style.justifyItems= 'center';
+    card.style.borderTop= '#ff6347 solid 8px';
     card.style.boxShadow = '5px 3px 10px 1px rgba(0,0,0,0.38)';
     mainContainer.appendChild(card);
 
