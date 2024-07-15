@@ -31,8 +31,8 @@ function bookCard(bookArr){
     const card =document.createElement('div');
     card.classList.add("Book-Card");
 
-    card.style.minWidth = '200px';
-    card.style.maxWidth = '300px';
+    card.style.minWidth = '300px';
+    card.style.maxWidth = '350px';
     card.style.borderRadius = '10px';
     card.style.padding = '10px'
     card.style.display= 'grid';
@@ -53,6 +53,10 @@ function bookCard(bookArr){
     bookList.style.gridTemplateRows = '1fr 1fr 1fr 1fr 1fr 1fr';
     card.appendChild(bookList);
     //map to list aproach first
+
+
+
+    
     bookArr.map((book, index)=>{
 
         //code for sorting by value key

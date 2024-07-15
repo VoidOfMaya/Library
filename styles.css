@@ -25,6 +25,9 @@
 }
 .title h1{
 }
+.logo-svg{
+    filter: invert(96%)sepia(100%)saturate(12%)hue-rotate(237deg)brightness(103%);
+}
 
 .main-container{
     display: grid;
@@ -48,4 +51,13 @@
 
 li {
     margin-top: 5px;
+}
+
+.add-book-btn{
+    display:grid;#eff5fd
+}
+.add-book-btn button{
+    border: none;
+    color:(0, 0, 0, 0, 4) ;
+    background-color: #eff5fd;
 }
