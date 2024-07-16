@@ -8,13 +8,33 @@ function Book(author, title, pageNo, read, publishDate){
     this.read = read;
     this.publishDate = publishDate;
 }
-function addBookToLibrary(){
-    //do stuff here
-}
+const mainBody = document.querySelector(".main")
+const mainContainer = document.querySelector(".main-container");
+const addBtn = document.querySelector('.add-btn');
+
+addBtn.addEventListener('click', ()=>{
+    console.log("button press detected!");
+    //dialog element
+    const fillInfo = document.createElement('dialog');
+    fillInfo.classList.add("fill-form");
+    mainBody.appendChild(fillInfo);
+    //form element
+    const form = document.createElement('form');
+    form.classList.add('book-form');
+    fillInfo.appendChild(form);
+    //dialog close button
+    const closeDialogBtn =document.createElement('button');
+    closeDialogBtn.classList.add('close-dialog-btn');
+    closeDialogBtn.innerHTML= "press to close window";
+    form.appendChild(closeDialogBtn);
+
+    fillInfo.showModal();
+
+    });
 function displayBooks (array){
     for(let i = 0; i < array.length; i++){
         let cardString= Array.from(Object.values(array[i]));
-        console.log(cardString);
+        //console.log(cardString);
         bookCard(cardString);
     }
 }
@@ -27,7 +47,7 @@ function bookCard(bookArr){
     const published = bookArr[4];
 
     //element creation
-    const mainContainer = document.querySelector(".main-container");
+
     const card =document.createElement('div');
     card.classList.add("Book-Card");
     
@@ -38,7 +58,7 @@ function bookCard(bookArr){
     card.style.display= 'grid';
     card.style.backgroundColor = 'rgb(255, 255, 255)';
     card.style.justifyItems= 'center';
-    card.style.borderTop= '#ff6347 solid 8px';
+    card.style.borderTop= '#ff6347 solid 4px';
     card.style.boxShadow = '5px 3px 10px 1px rgba(0,0,0,0.38)';
     mainContainer.appendChild(card);
 
@@ -115,25 +135,7 @@ function bookCard(bookArr){
                 break;
             default:   
         }
-
-        //code inserting each value
-        /*
-
-
-        bookItem.innerHTML= `${book}`;
-        bookList.appendChild(bookItem);
-        bookItem.style.padding = '5px';
-        bookItem.style.borderBottom = '1px solid black'
-        
-        */
     })
-    
-
-  
-  
-  
-    
-
 }
 
 // place holder example data

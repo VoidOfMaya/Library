@@ -53,23 +53,23 @@ li {
     margin-top: 5px;
 }
 
-.add-book-btn{
+.add-book-footer{
     display:grid;
     grid-template-columns: 2fr 1fr 2fr;
     justify-items: center;
     
 }
-.add-book-btn button{
+.add-book-footer button{
     border: none;
     background-color:#eff5fd;
 }
-.add-book-btn button img:hover{
+.add-book-footer button img:hover{
     width: 70px;
     height: 70px;
     
 }
-.add-book-btn button:hover{
-    background-color: white;
+.add-book-footer button:hover{
+    background-color: #FF9986;
     border-radius: 50px;
-    opacity: 50%;
+    
 }
