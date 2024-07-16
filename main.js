@@ -28,6 +28,7 @@ addBtn.addEventListener('click', ()=>{
     closeDialogBtn.innerHTML= "press to close window";
     form.appendChild(closeDialogBtn);
 
+
     fillInfo.showModal();
 
     });
@@ -61,6 +62,15 @@ function bookCard(bookArr){
     card.style.borderTop= '#ff6347 solid 4px';
     card.style.boxShadow = '5px 3px 10px 1px rgba(0,0,0,0.38)';
     mainContainer.appendChild(card);
+
+    //interactive card element:
+    card.addEventListener("mouseover",()=>{
+        card.style.borderTop = ' #FF9986 solid 4px'
+
+    })
+    card.addEventListener("mouseleave",()=>{
+        card.style.borderTop= '#ff6347 solid 4px';
+    })
 
 
     //card.textContent = `${bookArr} `;
