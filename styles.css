@@ -23,8 +23,7 @@
     box-shadow: 5px 3px 10px 1px rgba(39, 38, 38, 0.38);
 
 }
-.title h1{
-}
+
 .logo-svg{
     filter: invert(96%)sepia(100%)saturate(12%)hue-rotate(237deg)brightness(103%);
 }
@@ -77,10 +76,14 @@ li {
 #book-item{
     align-self: center;
     justify-self: center;
+    padding: 20px;
+    border: none;
+    border-radius: 10px;
 }
 
 #submit-book{
     display: grid;
+    gap: 10px;
     grid-template-areas:
                         "label  input"
                         "label  input"
@@ -102,5 +105,24 @@ li {
 #submit-book > #publushed-label{grid-area: "input" ;}
 
 #submit-book > .footer{
-    grid-area: "footer"
+    grid-area: "footer";    
+}
+
+#submit-book > input{
+    padding: 5px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+#submit-book > input:hover{
+  border-bottom: #FF9986 solid 2px;  
+    
+}
+#submit-book > input:focus{
+    border: #FF9986 solid 2px;
+    border-radius: 10px;  
+   outline: none; 
+}
+#submit-book > label:hover{
+    color: #FF9986;
 }
