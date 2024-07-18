@@ -14,22 +14,40 @@ const addBtn = document.querySelector('.add-btn');
 
 addBtn.addEventListener('click', ()=>{
     console.log("button press detected!");
+
+    const dialogForm = document.querySelector('#book-item')
+    
+    dialogForm.showModal();
+    /*
     //dialog element
     const fillInfo = document.createElement('dialog');
     fillInfo.classList.add("fill-form");
+    fillInfo.style.justifySelf = 'center';
+    fillInfo.style.alignSelf = 'center';
+    fillInfo.style.display = 'grid';
+    fillInfo.style.gridTemplate = '1fr 1fr1fr 1fr 1fr 1fr/ 1fr 1fr';
+    fillInfo.style.maxWidth = '350px';
     mainBody.appendChild(fillInfo);
+
     //form element
     const form = document.createElement('form');
     form.classList.add('book-form');
+    form.innerHTML= ' book name:';
+    //creating an input window
+    const titleInput = document.createElement('input');
+    titleInput.innerHTML = 'book here';
+    form.appendChild(titleInput);
     fillInfo.appendChild(form);
     //dialog close button
     const closeDialogBtn =document.createElement('button');
     closeDialogBtn.classList.add('close-dialog-btn');
     closeDialogBtn.innerHTML= "press to close window";
     form.appendChild(closeDialogBtn);
+    
 
 
     fillInfo.showModal();
+    */
 
     });
 function displayBooks (array){
@@ -65,7 +83,7 @@ function bookCard(bookArr){
 
     //interactive card element:
     card.addEventListener("mouseover",()=>{
-        card.style.borderTop = ' #FF9986 solid 4px'
+        card.style.borderTop = ' #FF9986 solid 4px';
 
     })
     card.addEventListener("mouseleave",()=>{

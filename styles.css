@@ -73,3 +73,34 @@ li {
     border-radius: 50px;
     
 }
+
+#book-item{
+    align-self: center;
+    justify-self: center;
+}
+
+#submit-book{
+    display: grid;
+    grid-template-areas:
+                        "label  input"
+                        "label  input"
+                        "label  input"
+                        "label  input"
+                        "footer footer";
+
+}
+
+
+#submit-book > .book-title-label{ grid-area: "label";}
+#submit-book > .author-name-label{ grid-area: "label";}
+#submit-book > .pages-label{ grid-area: "label";}
+#submit-book > .publushed-label{ grid-area: "label";}
+
+#submit-book > #book-title{grid-area: "input" ;}
+#submit-book > #author-name-label{grid-area: "input" ;}
+#submit-book > #pages-label{grid-area: "input" ;}
+#submit-book > #publushed-label{grid-area: "input" ;}
+
+#submit-book > .footer{
+    grid-area: "footer"
+}
