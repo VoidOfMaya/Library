@@ -52,12 +52,12 @@ function displayBooks (array){
         let cardString= Array.from(Object.values(array[i]));
         //console.log(cardString);
         //deletElement();
-        bookCard(cardString);
+        bookCard(cardString, i);
     }
 }
 
 //DOM book card creation
-function bookCard(bookArr){
+function bookCard(bookArr, bookIndex){
     //spliting array to indevidual objects  
     const author = bookArr[0];
     const title = bookArr[1];
@@ -101,7 +101,9 @@ function bookCard(bookArr){
     const removeSelfBtn = document.createElement('button');
     removeSelfBtn.innerHTML= 'Remove Book!';
     removeSelfBtn.addEventListener('click',()=>{
+         myLibrary.splice(bookIndex, 1);       
         mainContainer.removeChild(card);
+
     })
     card.appendChild(removeSelfBtn)
 
@@ -177,6 +179,6 @@ myLibrary.push(bookThree);
 
 
 
-
+console.log(myLibrary);
 
 displayBooks(myLibrary);
