@@ -15,13 +15,33 @@ const addBtn = document.querySelector('.add-btn');
 
 // dialog query selection
 const dialogForm = document.querySelector('#book-item')
-const dialogClose = document.querySelector|('#close')
-
+const closeBtn =document.getElementById('close-form');
 addBtn.addEventListener('click', ()=>{
     console.log("button press detected!");
-
+    //displays dialoge
     dialogForm.showModal();
-    });
+    //closes dialog
+
+    closeBtn.addEventListener('click',()=>{
+        dialogForm.close();
+    })    
+    //create book
+    const submitForm = document.querySelector('#submit-book');
+    submitForm.addEventListener('submit',(event)=>{
+        event.preventDefault();
+        let newBookTitle = document.getElementById('book-title').value;
+        let newBookAuthor = document.getElementById('author-name').value;
+        let newBookPages = document.getElementById('pages').value;
+        let newBookPublish = document.getElementById('published').value;
+        
+        const newBook = new Book(newBookTitle, newBookAuthor, newBookPages, false, newBookPublish);
+        myLibrary.push(newBook);
+
+        displayBooks(myLibrary);
+    })
+});
+
+
 
 function displayBooks (array){
     for(let i = 0; i < array.length; i++){
@@ -60,7 +80,7 @@ function bookCard(bookArr){
 
     })
     card.addEventListener("mouseleave",()=>{
-        card.style.borderTop= '#ff6347 solid 4px';
+        card.style.borderTop= '#ff6347 solid 8px';
     })
 
 
@@ -147,6 +167,8 @@ let bookThree = new Book("Danni Davido", "Magnum Dong", 2400, false, 2010);
 myLibrary.push(bookOne);
 myLibrary.push(bookTwo);
 myLibrary.push(bookThree);
+
+
 
 
 displayBooks(myLibrary);
