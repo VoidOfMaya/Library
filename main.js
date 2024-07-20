@@ -13,7 +13,7 @@ const mainBody = document.querySelector(".main")
 const mainContainer = document.querySelector(".main-container");
 const addBtn = document.querySelector('.add-btn');
 
-// dialog query selection
+// dialog logic
 const dialogForm = document.querySelector('#book-item')
 const closeBtn =document.getElementById('close-form');
 addBtn.addEventListener('click', ()=>{
@@ -33,23 +33,29 @@ addBtn.addEventListener('click', ()=>{
         let newBookAuthor = document.getElementById('author-name').value;
         let newBookPages = document.getElementById('pages').value;
         let newBookPublish = document.getElementById('published').value;
-        
+    
         const newBook = new Book(newBookTitle, newBookAuthor, newBookPages, false, newBookPublish);
+        
+        
+        mainContainer.innerHTML = '';
         myLibrary.push(newBook);
-
         displayBooks(myLibrary);
+
     })
 });
 
 
-
+//displays book items
 function displayBooks (array){
     for(let i = 0; i < array.length; i++){
         let cardString= Array.from(Object.values(array[i]));
         //console.log(cardString);
+        //deletElement();
         bookCard(cardString);
     }
 }
+
+//DOM book card creation
 function bookCard(bookArr){
     //spliting array to indevidual objects  
     const author = bookArr[0];
@@ -74,7 +80,7 @@ function bookCard(bookArr){
     card.style.boxShadow = '5px 3px 10px 1px rgba(0,0,0,0.38)';
     mainContainer.appendChild(card);
 
-    //interactive card element:
+        //interactive card element:
     card.addEventListener("mouseover",()=>{
         card.style.borderTop = ' #FF9986 solid 4px';
 
@@ -82,23 +88,15 @@ function bookCard(bookArr){
     card.addEventListener("mouseleave",()=>{
         card.style.borderTop= '#ff6347 solid 8px';
     })
-
-
-    //card.textContent = `${bookArr} `;
-
-    //creating internal book-card content
-    //making unordered list
+        //making unordered list
     const bookList =document.createElement('ul');
     bookList.classList.add("Book-list");
     bookList.style.display = 'grid';
     bookList.style.gridTemplateColumns = '1fr 1fr';
     bookList.style.gridTemplateRows = '1fr 1fr 1fr 1fr 1fr 1fr';
     card.appendChild(bookList);
-    //map to list aproach first
 
-
-
-    
+    //map book info to DOM Element
     bookArr.map((book, index)=>{
 
         //code for sorting by value key
@@ -167,6 +165,7 @@ let bookThree = new Book("Danni Davido", "Magnum Dong", 2400, false, 2010);
 myLibrary.push(bookOne);
 myLibrary.push(bookTwo);
 myLibrary.push(bookThree);
+
 
 
 
