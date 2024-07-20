@@ -40,6 +40,7 @@ addBtn.addEventListener('click', ()=>{
         mainContainer.innerHTML = '';
         myLibrary.push(newBook);
         displayBooks(myLibrary);
+        dialogForm.close();
 
     })
 });
@@ -95,6 +96,14 @@ function bookCard(bookArr){
     bookList.style.gridTemplateColumns = '1fr 1fr';
     bookList.style.gridTemplateRows = '1fr 1fr 1fr 1fr 1fr 1fr';
     card.appendChild(bookList);
+
+        //removes single card
+    const removeSelfBtn = document.createElement('button');
+    removeSelfBtn.innerHTML= 'Remove Book!';
+    removeSelfBtn.addEventListener('click',()=>{
+        mainContainer.removeChild(card);
+    })
+    card.appendChild(removeSelfBtn)
 
     //map book info to DOM Element
     bookArr.map((book, index)=>{

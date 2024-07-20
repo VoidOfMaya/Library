@@ -6,7 +6,21 @@
  
     list-style: none;
 }
+button{
+    border: none;
+    border-radius: 10px;
+    background: #ff6347;
+    color: #eff5fd;
+    padding: 10px;
+    width: 100%;
+    min-width: 200px;
+    font-size: medium;
 
+}
+button:hover{
+    background-color: #FF9986;
+    font-weight: bolder;
+}
 .main{
     background-color:#eff5fd;
     height: 100vh
