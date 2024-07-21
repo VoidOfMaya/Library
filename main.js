@@ -149,10 +149,30 @@ function bookCard(bookArr, bookIndex){
             case 3:
                 
                 bookKey.innerHTML = `read: `;
-                bookList.appendChild(bookKey);
-                bookItem.innerHTML= `${book}`;
-                bookList.appendChild(bookItem);
+                bookList.appendChild(bookKey); 
+                const readBtn = document.createElement('button');
+                readBtn.classList.add('read-status-window');
+                readBtn.style.padding= '5px';
+                readBtn.style.marginBottom='10px';
+                console.log(book + ' ' + typeof(book));
+                readBtn.addEventListener('click',()=>{
+                    if(book){
+                        myLibrary.splice(book, 1, false);
+                        console.log(myLibrary[index]);
+                    }else{
+                        myLibrary.splice(book, 1, true);
+                        
+                    }
+                })
+                if(book){
+                    readBtn.style.backgroundColor = 'green';
+                }else{
+                    readBtn.style.backgroundColor = 'red';
+                }
+                readBtn.innerHTML = `${book}`;
+                bookList.appendChild(readBtn);
 
+                
                 break;
 
             case 4:

@@ -22,15 +22,21 @@ button:hover{
     font-weight: bolder;
 }
 .main{
+    display: grid;
     background-color:#eff5fd;
-    height: 100vh
+    height: 100vh;
+    grid-template-areas: 'header-bar'
+                         'main-body'
+                         'main-body'
+                         'footer';
     
 }
 .title{
+    grid-area: 'header-bar';
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 10%;
+    margin-bottom: 5%;
     background-color: #ff6347;
     padding: 20px;
     color:white;
@@ -43,11 +49,12 @@ button:hover{
 }
 
 .main-container{
+    grid-area: 'main-body';
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr ;
     gap: 10px;
-    padding: 15px;
+    
     justify-items: center;
 }
 
@@ -67,23 +74,24 @@ li {
 }
 
 .add-book-footer{
+    grid-area: 'footer';
     display:grid;
     grid-template-columns: 2fr 1fr 2fr;
     justify-items: center;
+    background-color: #eff5fd;
     
 }
 .add-book-footer button{
     border: none;
     background-color:#eff5fd;
+    width: 30px;
+    height: 80px;
 }
-.add-book-footer button img:hover{
-    width: 70px;
-    height: 70px;
-    
-}
+
 .add-book-footer button:hover{
-    background-color: #FF9986;
-    border-radius: 50px;
+    background-color: #dce7fc;
+    border-radius: 70px;
+    
     
 }
 
@@ -139,4 +147,13 @@ li {
 }
 #submit-book > label:hover{
     color: #FF9986;
+}
+
+#close-form.footer{
+    background-color: #d7e0f1;
+    font-weight: bold;
+}
+#close-form.footer:hover{
+    background-color: red;
+    font-weight: bolder;
 }
