@@ -9,6 +9,7 @@ function Book(author, title, pageNo, read, publishDate){
     this.publishDate = publishDate;
 }
 
+// registering preexisting html elements  into the DOM
 const mainBody = document.querySelector(".main")
 const mainContainer = document.querySelector(".main-container");
 const addBtn = document.querySelector('.add-btn');
@@ -26,8 +27,9 @@ addBtn.addEventListener('click', ()=>{
     closeBtn.addEventListener('click',()=>{
         dialogForm.close();
     })    
-    //create book
-});    
+
+});
+//create book
 submitForm.addEventListener('submit',(event)=>{
     event.preventDefault();
     let newBookTitle = document.getElementById('book-title').value;
@@ -47,23 +49,17 @@ submitForm.addEventListener('submit',(event)=>{
     newBookPublish.value = '';
     dialogForm.close();
 
-    })
-
-
-
+})
 //displays book items
 function displayBooks (array){
     for(let i = 0; i < array.length; i++){
         let cardString= Array.from(Object.values(array[i]));
-        //console.log(cardString);
-        //deletElement();
         bookCard(cardString, i);
     }
 }
-
 //DOM book card creation
 function bookCard(bookArr, bookIndex){
-    //spliting array to indevidual objects  
+    //spliting array object to adressable key value pairs  
     const author = bookArr[0];
     const title = bookArr[1];
     const pages = bookArr[2];
@@ -74,7 +70,7 @@ function bookCard(bookArr, bookIndex){
 
     const card =document.createElement('div');
     card.classList.add("Book-Card");
-    
+    //card style
     card.style.minWidth = '300px';
     card.style.maxWidth = '350px';
     card.style.borderRadius = '10px';
@@ -86,7 +82,7 @@ function bookCard(bookArr, bookIndex){
     card.style.boxShadow = '5px 3px 10px 1px rgba(0,0,0,0.38)';
     mainContainer.appendChild(card);
 
-        //interactive card element:
+    //interactive card element:
     card.addEventListener("mouseover",()=>{
         card.style.borderTop = ' #FF9986 solid 4px';
 
@@ -94,7 +90,7 @@ function bookCard(bookArr, bookIndex){
     card.addEventListener("mouseleave",()=>{
         card.style.borderTop= '#ff6347 solid 8px';
     })
-        //making unordered list
+    //making unordered list
     const bookList =document.createElement('ul');
     bookList.classList.add("Book-list");
     bookList.style.display = 'grid';
@@ -102,7 +98,7 @@ function bookCard(bookArr, bookIndex){
     bookList.style.gridTemplateRows = '1fr 1fr 1fr 1fr 1fr 1fr';
     card.appendChild(bookList);
 
-        //removes single card
+    //removes single card
     const removeSelfBtn = document.createElement('button');
     removeSelfBtn.innerHTML= 'Remove Book!';
     removeSelfBtn.addEventListener('click',()=>{
