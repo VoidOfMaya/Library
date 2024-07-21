@@ -156,16 +156,24 @@ function bookCard(bookArr, bookIndex){
                 readBtn.style.marginBottom='10px';
                 console.log(book + ' ' + typeof(book));
                 readBtn.addEventListener('click',()=>{
+                let currentItem = myLibrary[bookIndex];    
                     if(book){
-                        myLibrary.splice(book, 1, false);
-                        console.log(myLibrary[index]);
-                    }else{
-                        myLibrary.splice(book, 1, true);
                         
+                        console.log(currentItem['read']);
+                        currentItem['read'] = false;
+                        console.log(currentItem);
+                        readBtn.style.backgroundColor = 'red';
+                        readBtn.innerHTML = 'false'
+                    }else if (book === false){
+                        currentItem['read'] = true;
+                        console.log(currentItem);
+                        readBtn.style.backgroundColor = 'green';
+                        readBtn.innerHTML = 'true'
                     }
                 })
                 if(book){
                     readBtn.style.backgroundColor = 'green';
+                    
                 }else{
                     readBtn.style.backgroundColor = 'red';
                 }
