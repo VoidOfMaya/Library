@@ -14,7 +14,8 @@ const mainContainer = document.querySelector(".main-container");
 const addBtn = document.querySelector('.add-btn');
 
 // dialog logic
-const dialogForm = document.querySelector('#book-item')
+const dialogForm = document.querySelector('#book-item');
+const submitForm = document.querySelector('#submit-book');
 const closeBtn =document.getElementById('close-form');
 addBtn.addEventListener('click', ()=>{
     console.log("button press detected!");
@@ -26,24 +27,28 @@ addBtn.addEventListener('click', ()=>{
         dialogForm.close();
     })    
     //create book
-    const submitForm = document.querySelector('#submit-book');
-    submitForm.addEventListener('submit',(event)=>{
-        event.preventDefault();
-        let newBookTitle = document.getElementById('book-title').value;
-        let newBookAuthor = document.getElementById('author-name').value;
-        let newBookPages = document.getElementById('pages').value;
-        let newBookPublish = document.getElementById('published').value;
+});    
+submitForm.addEventListener('submit',(event)=>{
+    event.preventDefault();
+    let newBookTitle = document.getElementById('book-title').value;
+    let newBookAuthor = document.getElementById('author-name').value;
+    let newBookPages = document.getElementById('pages').value;
+    let newBookPublish = document.getElementById('published').value;
     
-        const newBook = new Book(newBookTitle, newBookAuthor, newBookPages, false, newBookPublish);
+    const newBook = new Book(newBookTitle, newBookAuthor, newBookPages, false, newBookPublish);
         
         
-        mainContainer.innerHTML = '';
-        myLibrary.push(newBook);
-        displayBooks(myLibrary);
-        dialogForm.close();
+    mainContainer.innerHTML = '';
+    myLibrary.push(newBook);
+    displayBooks(myLibrary);
+    newBookTitle.value = '';
+    newBookAuthor.value = '';
+    newBookPages.value = '';
+    newBookPublish.value = '';
+    dialogForm.close();
 
     })
-});
+
 
 
 //displays book items
