@@ -1,6 +1,6 @@
 const myLibrary =[];
 
-function Book(author, title, pageNo, read, publishDate){
+/*function Book(author, title, pageNo, read, publishDate){
     //constuctor (author/title/number of pages/read status/publish date)
     this.author = author;
     this.title = title;
@@ -9,6 +9,15 @@ function Book(author, title, pageNo, read, publishDate){
     this.publishDate = publishDate;
     this.info = function(){
         console.log("this is a constructor method")
+    }
+}*/
+class Book{
+    constructor(author, title, pageNo, read, publishDate){
+        this.author = author;
+        this.title = title;
+        this.pageNo = pageNo;
+        this.read = read;
+        this.publishDate = publishDate; 
     }
 }
 
