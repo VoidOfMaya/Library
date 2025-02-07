@@ -7,14 +7,17 @@ function Book(author, title, pageNo, read, publishDate){
     this.pageNo = pageNo;
     this.read = read;
     this.publishDate = publishDate;
+    this.info = function(){
+        console.log("this is a constructor method")
+    }
 }
 
-// registering preexisting html elements  into the DOM
+// registering pre existing html elements  into the DOM
 const mainBody = document.querySelector(".main")
 const mainContainer = document.querySelector(".main-container");
 const addBtn = document.querySelector('.add-btn');
 
-// dialog logic
+// registry of a new book dialog window logic
 const dialogForm = document.querySelector('#book-item');
 const submitForm = document.querySelector('#submit-book');
 const closeBtn =document.getElementById('close-form');
@@ -29,7 +32,7 @@ addBtn.addEventListener('click', ()=>{
     })    
 
 });
-//create book
+//registry  of a new book
 submitForm.addEventListener('submit',(event)=>{
     event.preventDefault();
     let newBookTitle = document.getElementById('book-title').value;
@@ -43,6 +46,8 @@ submitForm.addEventListener('submit',(event)=>{
     mainContainer.innerHTML = '';
     myLibrary.push(newBook);
     displayBooks(myLibrary);
+
+    // clear out variables for next book registry
     newBookTitle.value = '';
     newBookAuthor.value = '';
     newBookPages.value = '';
