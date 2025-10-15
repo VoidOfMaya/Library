@@ -13,3 +13,11 @@ Library project:
 
 4> add a button to change its read status
     > create a function that toggles a books read startus on your Book prototype instance
+
+
+15/10/2025: aditional goals of implementing form validations with javascript.
+ 
+ goals:
+ -constraint validation API
+ - validation in html forms
+ -add validation using only javascript
