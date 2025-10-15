@@ -44,17 +44,51 @@ addBtn.addEventListener('click', ()=>{
 //registry  of a new book
 submitForm.addEventListener('submit',(event)=>{
     event.preventDefault();
-    let newBookTitle = document.getElementById('book-title').value;
-    let newBookAuthor = document.getElementById('author-name').value;
-    let newBookPages = document.getElementById('pages').value;
-    let newBookPublish = document.getElementById('published').value;
+    let newBookTitle = document.getElementById('book-title');
+    newBookTitle.addEventListener('input', ()=>{
+        if (newBookTitle.value.length <= 3) {
+            newBookTitle.setCustomValidity("title must be at least 3 characters.");
+        } else {
+            newBookTitle.setCustomValidity(""); // Clear error
+        }
+    })
+    let newBookAuthor = document.getElementById('author-name');
+    newBookAuthor.addEventListener('input', ()=>{
+        if (newBookAuthor.value.length <= 4) {
+            newBookAuthor.setCustomValidity("Name must be at least 4 characters.");
+        } else {
+            newBookAuthor.setCustomValidity(""); // Clear error
+        }
+    })
+    let newBookPages = document.getElementById('pages');
+    newBookPages.addEventListener('input', ()=>{
+        if (newBookPages.value < 10) {
+            newBookPages.setCustomValidity("Page number must be at least 10 pages.");
+        } else {
+            newBookPages.setCustomValidity(""); // Clear error
+        }
+    })
+    let newBookPublish = document.getElementById('published');
+    newBookPublish.addEventListener('input', ()=>{
+        if (newBookPublish.value.checkValidity()) {
+            newBookPublish.setCustomValidity("Username must be at least 3 characters.");
+        } else {
+            newBookPublish.setCustomValidity(""); // Clear error
+        }
+    })
+    const newBook = new Book(newBookTitle.value, newBookAuthor.value, newBookPages.value, false, newBookPublish.value) ;
     
-    const newBook = new Book(newBookTitle, newBookAuthor, newBookPages, false, newBookPublish);
+    if(submitForm.checkValidity()){
+        mainContainer.innerHTML = '';
+        myLibrary.push(newBook);
+        displayBooks(myLibrary);        
+    }else{
+        submitForm.reportValidity();
+    }
+    
         
         
-    mainContainer.innerHTML = '';
-    myLibrary.push(newBook);
-    displayBooks(myLibrary);
+
 
     // clear out variables for next book registry
     newBookTitle.value = '';
